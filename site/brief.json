@@ -1,0 +1,36 @@
+{
+  "_comment": "PLACEHOLDER BRIEF. Replace every value with your own content. The page is rebuilt from this file, so you never have to edit the HTML to change copy.",
+  "siteName": "Sourdough Starter Club",
+  "theme": {
+    "primary": "#8a5a2b",
+    "accent": "#f2b94b",
+    "background": "#fbf7f1",
+    "text": "#2b2118"
+  },
+  "hero": {
+    "headline": "Bake your first loaf without the guesswork",
+    "subheadline": "A simple, step-by-step course for beginners who want a reliable sourdough starter and a loaf they are proud of.",
+    "image": "",
+    "imageAlt": "A freshly baked sourdough loaf on a wooden board"
+  },
+  "features": [
+    {
+      "title": "Starter in 7 days",
+      "text": "A day-by-day guide to building a healthy starter from flour and water."
+    },
+    {
+      "title": "Clear photos at every step",
+      "text": "See what the dough should look and feel like, so you know when to move on."
+    },
+    {
+      "title": "Troubleshooting guide",
+      "text": "Flat loaf? Gummy crumb? Find the likely cause and the fix in minutes."
+    }
+  ],
+  "cta": {
+    "label": "Get the free 7-day guide",
+    "href": "#signup",
+    "note": "No spam. Unsubscribe in one click."
+  },
+  "footer": "© 2026 Sourdough Starter Club. Placeholder content."
+}
