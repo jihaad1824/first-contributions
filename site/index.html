@@ -30,10 +30,35 @@
       <div class="container feature-grid" id="features"></div>
     </section>
 
-    <section class="cta" id="signup">
+    <section class="cta">
       <div class="container">
         <a class="btn btn-large" id="cta-bottom" href="#"></a>
         <p class="note" id="cta-note"></p>
+      </div>
+    </section>
+
+    <section class="signup" id="signup">
+      <div class="container">
+        <div class="signup-card">
+          <h2 id="signup-heading"></h2>
+          <p id="signup-intro"></p>
+          <form id="signup-form">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name">
+
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email">
+
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" required autocomplete="organization">
+
+            <label for="f-roles">Roles you need to fill (optional)</label>
+            <textarea id="f-roles" name="roles" rows="3"></textarea>
+
+            <button class="btn btn-large" id="signup-submit" type="submit"></button>
+          </form>
+          <p id="signup-status" role="status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
   </main>

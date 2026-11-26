@@ -1,36 +1,41 @@
 {
-  "_comment": "PLACEHOLDER BRIEF. Replace every value with your own content. The page is rebuilt from this file, so you never have to edit the HTML to change copy.",
   "siteName": "Just ASK JAY",
   "theme": {
-    "primary": "#8a5a2b",
-    "accent": "#f2b94b",
-    "background": "#fbf7f1",
-    "text": "#2b2118"
+    "primary": "#1f3a5f",
+    "accent": "#f2a900",
+    "background": "#f7f9fc",
+    "text": "#1b2433"
   },
   "hero": {
-    "headline": "Bake your first loaf without the guesswork",
-    "subheadline": "A simple, step-by-step course for beginners who want a reliable sourdough starter and a loaf they are proud of.",
+    "headline": "Find hard FM and data centre talent before your competitors do",
+    "subheadline": "We recruit HVAC engineers, electricians, technicians, building engineers and project managers for facilities and data centre teams across the USA. Start a free trial and see who we would put forward for your open roles.",
     "image": "",
-    "imageAlt": "A freshly baked sourdough loaf on a wooden board"
+    "imageAlt": "Engineer checking equipment in a data centre"
   },
   "features": [
     {
-      "title": "Starter in 7 days",
-      "text": "A day-by-day guide to building a healthy starter from flour and water."
+      "title": "Every trade, one partner",
+      "text": "HVAC, mechanical, electrical, controls and management roles, from single hires to full project teams."
     },
     {
-      "title": "Clear photos at every step",
-      "text": "See what the dough should look and feel like, so you know when to move on."
+      "title": "Built for critical sites",
+      "text": "We understand uptime, shift patterns and compliance, so we screen for experience in facilities where downtime is expensive."
     },
     {
-      "title": "Troubleshooting guide",
-      "text": "Flat loaf? Gummy crumb? Find the likely cause and the fix in minutes."
+      "title": "Free trial, no obligation",
+      "text": "Send us one open role. We will show you the candidates we would put forward, and you decide whether to continue."
     }
   ],
   "cta": {
-    "label": "Get the free 7-day guide",
+    "label": "Start your free trial",
     "href": "#signup",
-    "note": "No spam. Unsubscribe in one click."
+    "note": "Free to start. We will confirm the trial details when we contact you."
   },
-  "footer": "© 2026 Sourdough Starter Club. Placeholder content."
+  "signup": {
+    "heading": "Start your free trial",
+    "intro": "Tell us about your team and the roles you need to fill. We will be in touch within one working day.",
+    "buttonLabel": "Request my free trial",
+    "endpoint": "https://script.google.com/macros/s/AKfycbwf1J_1qsdI0YvJCQzihFYB0BSmrV_vM_MoyynQrSq6Ld0Aqr-i9v6WIft2hF1xvriUHA/exec"
+  },
+  "footer": "© 2026 Just ASK JAY. Recruitment for hard FM and data centres."
 }

@@ -1,5 +1,6 @@
 // Builds the page from brief.json.
 // Step 1: load the brief. Step 2: check it. Step 3: fill the page.
+// Step 4: connect the sign-up form to the destination set in brief.json.
 // If anything goes wrong, the page shows a clear message instead of a blank screen.
 
 (function () {
@@ -77,6 +78,63 @@
     // If there is no image, the coloured box stays as a placeholder.
   }
 
+  // Sign-up form: fill its wording from the brief, then wire up submitting.
+  // The form only sends data when brief.signup.endpoint is a secure (https) address,
+  // such as a spreadsheet connection. Until then it shows a "not connected" message.
+  function renderSignup(signup) {
+    if (!signup) return;
+    setText("signup-heading", signup.heading);
+    setText("signup-intro", signup.intro);
+    setText("signup-submit", signup.buttonLabel);
+
+    var form = $("signup-form");
+    var status = $("signup-status");
+    if (!form || !status) return;
+
+    var endpoint = typeof signup.endpoint === "string" ? signup.endpoint.trim() : "";
+    var connected = /^https:\/\//i.test(endpoint);
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      status.textContent = "";
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        status.textContent = "Please fill in the highlighted fields.";
+        return;
+      }
+      if (!connected) {
+        console.warn("signup.endpoint is not set in brief.json, so no details were sent.");
+        status.textContent = "Sign-up is not connected yet. Please check back soon.";
+        return;
+      }
+
+      var data = {};
+      new FormData(form).forEach(function (value, key) {
+        data[key] = String(value).trim();
+      });
+      data.submittedAt = new Date().toISOString();
+
+      status.textContent = "Sending…";
+      // mode "no-cors" lets the browser send the details to a spreadsheet script
+      // on another web address. The browser then cannot read the reply, so we only
+      // learn whether the request was sent, not whether it was saved.
+      fetch(endpoint, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data)
+      })
+        .then(function () {
+          form.reset();
+          status.textContent = "Thank you. We have received your request.";
+        })
+        .catch(function () {
+          status.textContent = "Sorry, something went wrong. Please try again.";
+        });
+    });
+  }
+
   function render(brief) {
     document.title = brief.siteName;
     var meta = document.querySelector('meta[name="description"]');
@@ -96,6 +154,7 @@
       if (link) link.setAttribute("href", safeHref(brief.cta.href));
     });
     setText("cta-note", brief.cta.note);
+    renderSignup(brief.signup);
     setText("footer", brief.footer);
   }
 
